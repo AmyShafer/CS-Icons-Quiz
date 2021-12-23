@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Oooh+Baby&family=PT+Sans+Narrow&family=Padauk&family=Sigmar+One&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --nav-green: #C6D18E;
+  --main-green: #2B3013;
+  --accent-green: #d8e0b2; 
+}
+
+body {
+    background-color: var(--main-green);
+    color: var(--accent-green);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--nav-green);
+    color: black;
+}
+
+nav a {
+    display: inline-block;
+    justify-items: flex-start;
+    color: black;
+    font-family: 'Sigmar One', cursive;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+#timer {
+    justify-items: flex-end;
+    font-family: 'Sigmar One', cursive;
+    font-size: 2em;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cs-icons-quiz {
+    width: 75%;
+    height: 75%;
+    margin: 50px;
+    text-align: center;
+}
+
+/* The Quiz Questions */
+h1 {
+    margin-top: 15px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 3em;
+}
+
+/* Multiple Choice Buttons */
+h2 {
+    margin-top: 15px;
+    font-family: 'Work Sans', sans-serif;
+}
+
+/* Correct or Incorrect Answer */
+p {
+    margin-top: 15px;
+    font-family: 'Vujahday Script', cursive;
+    font-size: 3em;
+}
