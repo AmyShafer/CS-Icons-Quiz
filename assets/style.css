@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Oooh+Baby&family=PT+Sans+Narrow&family=Padauk&family=Sigmar+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oxygen&family=Vujahday+Script&display=swap');
 
 * {
   box-sizing: border-box;
@@ -7,14 +7,15 @@
 }
 
 :root {
-  --nav-green: #C6D18E;
-  --main-green: #2B3013;
-  --accent-green: #d8e0b2; 
+  --bare-maroon: #98003C;
+  --main-yellow: #FFB600;
+  --accent-orange: #FF6500; 
+  --gogo-green: #00985C;
 }
 
 body {
-    background-color: var(--main-green);
-    color: var(--accent-green);
+    background-color: var(--main-yellow);
+    color: var(--bare-maroon);
 }
 
 nav {
@@ -22,14 +23,14 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: var(--nav-green);
-    color: black;
+    background-color: var(--bare-maroon);
+    color: var(--main-yellow);
 }
 
 nav a {
     display: inline-block;
     justify-items: flex-start;
-    color: black;
+    color: var(--main-yellow);
     font-family: 'Sigmar One', cursive;
     font-size: 2em;
     text-decoration: none;
@@ -47,24 +48,62 @@ main {
     align-items: center;
 }
 
-.cs-icons-quiz {
-    width: 75%;
+#instructions {
+    width: 70%;
     height: 75%;
     margin: 50px;
     text-align: center;
+    display: block;
+}
+
+#cs-icons-quiz {
+    width: 70%;
+    height: 75%;
+    margin: 50px;
+    text-align: center;
+    display: none;
 }
 
 /* The Quiz Questions */
 h1 {
     margin-top: 15px;
-    font-family: 'Work Sans', sans-serif;
-    font-size: 3em;
+    font-family: 'Sigmar One', cursive;
+    font-size: 2.5em;
+}
+
+h3 {
+    margin: 20px 0 20px 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.2em;
+}
+
+#start {
+    padding: 2px;
+    width: 200px;
+    height: 85px;
+    background-color: var(--gogo-green);
+    color: var(--main-yellow);
+    font-family: 'Sigmar One', cursive;
+    font-size: 2.5em;
+    font-weight: bolder;
+    border-radius: 20px;
+}
+
+#quiz-question {
+    margin: 20px 0 20px 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.2em;
 }
 
 /* Multiple Choice Buttons */
-h2 {
-    margin-top: 15px;
+ul li {
+    margin-top: 7px;
+    margin-left: 30px;
+    text-align: left;
     font-family: 'Work Sans', sans-serif;
+    font-size: 1.4em;
+    font-weight: 700;
+    list-style-type: none;
 }
 
 /* Correct or Incorrect Answer */

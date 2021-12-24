@@ -16,16 +16,21 @@
       <header>
         <nav>
             <div id="high-scores"><a href="#">View High Scores</a></div>
-            <div id="timer" onload="countdownTimer()">Timer</div> 
+            <div id="timer">Timer</div> 
           </ul>    
         </nav>
       </header>  
       <main>
-        <section class="cs-icons-quiz">
-            <h1 class="quiz-question">Question</h1>
-            <h2 class="multiple-choice">Options</h2>
-            <p class="result">Correct/Incorrect</p>
+        <section id="instructions">
+          <h1>Computer Science Icons Quiz</h1>
+          <h3>Take this quiz to learn about computer science icons. Select the correct answer before the timer runs out. See if you can make the scoreboard!</h3>
+          <button id="start">Start</button>
         </section>
+        <section id="cs-icons-quiz">
+          <h1 id="quiz-question"></h1>
+          <ul id="multiple-choice"></ul>
+          <p id="result">Correct/Incorrect</p>
+      </section>
       </main>
       <script src="./assets/script.js"></script>
     </body>

@@ -1,27 +1,37 @@
+var start = document.getElementById("start");
+
 function countdownTimer() {
     var count = 60;
     var interval = setInterval(function(){
-      document.getElementById('timer').innerHTML=count;
+      document.getElementById('timer').innerHTML = count;
       count--;
       if (count === 0){
         clearInterval(interval);
-        document.getElementById('timer').innerHTML='Time\'s Up!';
+        document.getElementById('timer').innerHTML = 'Time\'s Up!';
       }
     }, 1000);
 }
 
-window.addEventListener("load", countdownTimer);
+function startQuiz() {
+  countdownTimer();
+  var instructionsVanish = document.getElementById("instructions");
+  instructionsVanish.style.display = "none";
+  var quizAppears = document.getElementById("cs-icons-quiz");
+  quizAppears.style.display = "block";
+
+  displayQuizQuestions(allQuestions);
+}
 
 var allQuestions = [
     // Question One
     {
-        question: "Fill in the Blank: _____ was known as the first computer programmer.",
+        question: "Fill in the Blank: _________ is known as the first computer programmer.",
         choices: ["a.) Albert Einstein", "b.) Albert Schweitzer", "c.) Arnold Schwarzenegger", "d.) Ada Lovelace"],
         correctAnswer: 3
     },
     // Question Two
     {
-        question: "Fill in the Blank: A plaque at a Alan Turning statue reads 'Father of ______, mathematician, logician, wartime codebreaker, victim of prejudice.'",
+        question: "Fill in the Blank: A plaque at a Alan Turning statue reads 'Father of ______, mathematician, logician, wartime codebreaker, victim of prejudice.\'",
         choices: ["a.) Cambridge Calculus", "b.) commie diets", "c.) computer science", "d.) company dress codes"],
         correctAnswer: 2
     },
@@ -33,7 +43,7 @@ var allQuestions = [
     },
     // Question Four
     {
-        question: "Fill in the Blank: Margaret Hamilton is one of the three people credited for coining the term “______”",
+        question: "Fill in the Blank: Margaret Hamilton is one of the three people credited for coining the term “______\”",
         choices: ["a.) software engineering", "b.) softcore corn", "c.) photographic memory", "d.) Semiconductor memory"],
         correctAnswer: 0
     },
@@ -46,24 +56,22 @@ var allQuestions = [
 ]
 
 function displayQuizQuestions(questionArray) {
-  var currentQuestion = document.getElementsByClassName("quiz-question");
-  var currentChoices = document.getElementsByClassName("multiple-choice");
-  var correctChoice = document.qgetElementsByClassName("correct-answer");
-  var currentResult = document.getElementsByClassName("result");  
+  var quizQuestions = document.getElementById("quiz-question");
+  var quizChoices = document.getElementById("multiple-choice");
 
-  currentQuestion.innerHTML = questionArray[0];
-}
-
-window.addEventListener("load", displayQuizQuestions(allQuestions));
-
-function grader() {
-  if (obj[answerGiven] === obj[correctAnswer]) {
-      document.getElementById("grading").innerHTML = "Correct!";
-  } else {
-    document.getElementById("grading").innerHTML = "Incorrect!";
+  for (var i = 0; i < questionArray.length; i++) {
+    var currentQuestion = questionArray[i]["question"];
+    quizQuestions.innerHTML = currentQuestion;
+    // loop through the multiple choices
+    for (var j = 0; j < questionArray[i]["choices"][j].length; j++) {
+      var currentOption = questionArray[i]["choices"][j];
+      var choiceLi = document.createElement("li");
+      choiceLi.innerHTML = currentOption;  
+      quizChoices.appendChild(choiceLi);
+    }
+     
   }
 }
 
-function highScoreBoard() {
-
-}
+    
+start.addEventListener("click", startQuiz);
