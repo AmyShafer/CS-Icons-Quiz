@@ -27,7 +27,7 @@ var allQuestions = [
     {
         question: "Fill in the Blank: _________ is known as the first computer programmer.",
         choices: ["a.) Albert Einstein", "b.) Albert Schweitzer", "c.) Arnold Schwarzenegger", "d.) Ada Lovelace"],
-        correctAnswer: 3
+        correctAnswer: "d.) Ada Lovelace"
     },
     // Question Two
     {
@@ -61,15 +61,31 @@ function displayQuizQuestions(questionArray) {
 
   for (var i = 0; i < questionArray.length; i++) {
     var currentQuestion = questionArray[i]["question"];
+    var correctAnswer = questionArray[i]["correctAnswer"];
     quizQuestions.innerHTML = currentQuestion;
     // loop through the multiple choices
     for (var j = 0; j < questionArray[i]["choices"][j].length; j++) {
       var currentOption = questionArray[i]["choices"][j];
+      var correctAnswer = questionArray[i]["correctAnswer"];
       var choiceLi = document.createElement("li");
+      choiceLi.addEventListener("click", function(event) {
+        var userAnswer = event.target.innerHTML;
+        console.log(userAnswer);
+        checkAnswer(userAnswer, correctAnswer);
+      });
+        
       choiceLi.innerHTML = currentOption;  
       quizChoices.appendChild(choiceLi);
     }
-     
+    
+  }
+}
+
+function checkAnswer(actualAnswer, expectedAnswer) {
+  if (actualAnswer === expectedAnswer) {
+    console.log("Correct");  
+  } else {
+    console.log("Wrong!");
   }
 }
 

@@ -9,7 +9,7 @@
 :root {
   --bare-maroon: #98003C;
   --main-yellow: #FFB600;
-  --accent-orange: #FF6500; 
+  --accent-orange: #FF8600; 
   --gogo-green: #00985C;
 }
 
@@ -95,15 +95,26 @@ h3 {
     font-size: 2.2em;
 }
 
-/* Multiple Choice Buttons */
+/* Multiple Choice Links */
 ul li {
     margin-top: 7px;
     margin-left: 30px;
+    padding: 10px;
     text-align: left;
+    width: 350px;
+    height: 70px;
+    background-color: var(--accent-orange);
+    color: var(--bare-maroon);
     font-family: 'Work Sans', sans-serif;
     font-size: 1.4em;
-    font-weight: 700;
+    font-weight: 900;
     list-style-type: none;
+    border-radius: 14px;
+}
+
+li:hover {
+    background-color: var(--gogo-green);
+    color: var(--main-yellow);
 }
 
 /* Correct or Incorrect Answer */
