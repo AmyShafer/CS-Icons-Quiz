@@ -95,6 +95,12 @@ h3 {
     font-size: 2.2em;
 }
 
+#outOfTime {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.2em;
+    display: none;
+}
+
 /* Multiple Choice Links */
 ul li {
     margin-top: 7px;
@@ -122,5 +128,6 @@ p {
     margin-top: 15px;
     font-family: 'Vujahday Script', cursive;
     font-size: 3em;
+    font-weight: 900;
     display: none;
 }
