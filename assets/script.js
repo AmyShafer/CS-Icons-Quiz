@@ -93,22 +93,21 @@ function checkAnswer(actualAnswer, expectedAnswer) {
   var nextQuestion = parseInt(localStorage.getItem("questionNumber")) + 1;
   //var correctAnswer = localStorage.getItem();
   
-  if (actualAnswer === expectedAnswer) {
-    resultAppears.innerHTML = "Correct!"
-    resultAppears.style.color = "#00985C";
-    resultAppears.style.display = "block";
-  } else {
-    resultAppears.innerHTML = "Incorrect!"
-    console.log("Incorrect!");
-    resultAppears.style.display = "block";
+  for (var i = 0; i < 5; i++) {
+    if (actualAnswer === expectedAnswer) {
+      resultAppears.innerHTML = "Correct!"
+      resultAppears.style.color = "#00985C";
+      resultAppears.style.display = "block";
+    } else {
+      resultAppears.innerHTML = "Incorrect!"
+      console.log("Incorrect!");
+      resultAppears.style.display = "block";
+    }
+    displayQuizQuestions(allQuestions, i); 
   }
-  
-  if (nextQuestion === 4) {
-    choices.style.display = "none";
-    resultAppears.style.display = "none";
-    scoreQuiz();
-  } 
-  displayQuizQuestions(allQuestions, nextQuestion);
+  choices.style.display = "none";
+  resultAppears.style.display = "none";
+  scoreQuiz();
 }
 
 function scoreQuiz() {
@@ -118,7 +117,7 @@ function scoreQuiz() {
   var remainingTime = document.getElementById('timer').innerHTML;
 
   finalScore.innerHTML = remainingTime;
-  revealScore.appendChild(final);
+  revealScore.appendChild(finalScore);
 }
 
     
