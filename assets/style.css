@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oxygen&family=Vujahday+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
 
 * {
   box-sizing: border-box;
@@ -57,6 +58,14 @@ main {
 }
 
 #cs-icons-quiz {
+    width: 70%;
+    height: 75%;
+    margin: 50px;
+    text-align: center;
+    display: none;
+}
+
+#quiz-completed {
     width: 70%;
     height: 75%;
     margin: 50px;
@@ -130,4 +139,17 @@ p {
     font-size: 3em;
     font-weight: 900;
     display: none;
+}
+
+/* High Score Page */
+h4 {
+    font-family: 'Mukta', sans-serif;
+    font-size: 2.5em;
+    font-weight: 800;
+    padding-bottom: 2em;
+}
+
+span {
+    font-family: 'Sigmar One', cursive;
+    color: var(--gogo-green);
 }

@@ -16,7 +16,6 @@ function countdownTimer() {
 
 function startQuiz() {
   countdownTimer();
-  var points = localStorage.setItem("correct", 0);
   var instructionsVanish = document.getElementById("instructions");
   instructionsVanish.style.display = "none";
   var quizAppears = document.getElementById("cs-icons-quiz");
@@ -59,6 +58,13 @@ var allQuestions = [
 ]
 
 function displayQuizQuestions(questionArray, number) {
+
+  // edge case for the end of the quiz
+  if (number > 4) {
+    console.log("End of Quiz.");
+    scoreQuiz();
+  }
+
   var quizQuestions = document.getElementById("quiz-question");
   var currentQuestion = questionArray[number]["question"];
   quizQuestions.innerHTML = currentQuestion;
@@ -70,30 +76,29 @@ function multipleChoices (questionArray, number) {
   var quizChoices = document.getElementById("multiple-choice");
   var correctAnswer = questionArray[number]["correctAnswer"];
   var answered = localStorage.setItem("questionNumber", number);
+  var choiceLi = "";
   quizChoices.innerHTML = choiceLi;
 
    // loop through the multiple choices
    for (var i = 0; i < 4; i++) {
     var currentOption = questionArray[number]["choices"][i];
-    var choiceLi = document.createElement("li");
+    choiceLi = document.createElement("li");
     choiceLi.addEventListener("click", function(event) {
       var userAnswer = event.target.innerHTML;
       checkAnswer(userAnswer, correctAnswer);
     });
-      
+    
     choiceLi.innerHTML = currentOption;  
     quizChoices.appendChild(choiceLi);
   }
 }
 
 function checkAnswer(actualAnswer, expectedAnswer) {
-  var choices = document.getElementById("multiple-choice");
   var resultAppears = document.getElementById("result");
   var clock = document.getElementById('timer');
   var nextQuestion = parseInt(localStorage.getItem("questionNumber")) + 1;
-  //var correctAnswer = localStorage.getItem();
   
-  for (var i = 0; i < 5; i++) {
+  
     if (actualAnswer === expectedAnswer) {
       resultAppears.innerHTML = "Correct!"
       resultAppears.style.color = "#00985C";
@@ -103,21 +108,20 @@ function checkAnswer(actualAnswer, expectedAnswer) {
       console.log("Incorrect!");
       resultAppears.style.display = "block";
     }
-    displayQuizQuestions(allQuestions, i); 
-  }
-  choices.style.display = "none";
-  resultAppears.style.display = "none";
-  scoreQuiz();
+    displayQuizQuestions(allQuestions, nextQuestion); 
 }
 
 function scoreQuiz() {
-  var revealScore = document.getElementById("cs-icons-quiz");
-  var userScore = document.getElementById("quiz-question");
-  var finalScore = document.getElementById("score");
+  var noMoreQuestions = document.getElementById("cs-icons-quiz");
+  var quizCompleted = document.getElementById("quiz-completed");
+  var score = document.getElementById("score");
   var remainingTime = document.getElementById('timer').innerHTML;
 
-  finalScore.innerHTML = remainingTime;
-  revealScore.appendChild(finalScore);
+  noMoreQuestions.style.display = "none"; 
+  quizCompleted.style.display = "block";
+
+  score.innerHTML = remainingTime;
+  revealScore.appendChild(score);
 }
 
     
