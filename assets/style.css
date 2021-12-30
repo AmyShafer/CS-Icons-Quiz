@@ -1,5 +1,10 @@
+
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Oxygen&family=Vujahday+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+/* organized by tag selection alphabetically,
+followed by id selection alphabetically */
 
 * {
   box-sizing: border-box;
@@ -17,6 +22,37 @@
 body {
     background-color: var(--main-yellow);
     color: var(--bare-maroon);
+}
+
+/* The Quiz Questions */
+h1 {
+    margin-top: 15px;
+    font-family: 'Sigmar One', cursive;
+    font-size: 2.5em;
+}
+
+h3 {
+    margin: 20px 0 20px 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.2em;
+}
+
+/* High Score Page */
+h4 {
+    font-family: 'Mukta', sans-serif;
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+li:hover {
+    background-color: var(--gogo-green);
+    color: var(--main-yellow);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 nav {
@@ -37,77 +73,19 @@ nav a {
     text-decoration: none;
 }
 
-#timer {
-    justify-items: flex-end;
-    font-family: 'Sigmar One', cursive;
-    font-size: 2em;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#instructions {
-    width: 70%;
-    height: 75%;
-    margin: 50px;
-    text-align: center;
-    display: block;
-}
-
-#cs-icons-quiz {
-    width: 70%;
-    height: 75%;
-    margin: 50px;
-    text-align: center;
-    display: none;
-}
-
-#quiz-completed {
-    width: 70%;
-    height: 75%;
-    margin: 50px;
-    text-align: center;
-    display: none;
-}
-
-/* The Quiz Questions */
-h1 {
+/* Correct or Incorrect Answer */
+p {
     margin-top: 15px;
+    font-family: 'Vujahday Script', cursive;
+    font-size: 3em;
+    font-weight: 900;
+    padding-bottom: .75em;
+}
+
+/*  Used for High Score Only */
+span {
     font-family: 'Sigmar One', cursive;
-    font-size: 2.5em;
-}
-
-h3 {
-    margin: 20px 0 20px 0;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 2.2em;
-}
-
-#start {
-    padding: 2px;
-    width: 200px;
-    height: 85px;
-    background-color: var(--gogo-green);
-    color: var(--main-yellow);
-    font-family: 'Sigmar One', cursive;
-    font-size: 2.5em;
-    font-weight: bolder;
-    border-radius: 20px;
-}
-
-#quiz-question {
-    margin: 20px 0 20px 0;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 2.2em;
-}
-
-#outOfTime {
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 2.2em;
-    display: none;
+    color: var(--gogo-green);
 }
 
 /* Multiple Choice Links */
@@ -127,29 +105,85 @@ ul li {
     border-radius: 14px;
 }
 
-li:hover {
-    background-color: var(--gogo-green);
-    color: var(--main-yellow);
+#cs-icons-quiz {
+    width: 70%;
+    height: 75%;
+    margin: 50px;
+    text-align: center;
+    display: none;
 }
 
-/* Correct or Incorrect Answer */
-p {
+#highScore {
+    padding: 2px;
+    width: 200px;
+    height: 85px;
+    background-color: var(--bare-maroon);
+    color: var(--accent-orange);
+    font-family: 'Sigmar One', cursive;
+    font-size: 2.5em;
+    font-weight: bolder;
+    text-align: center;
+    border-radius: 20px;
+}
+
+/* Before the quiz starts */
+#instructions {
+    width: 70%;
+    height: 75%;
+    margin: 50px;
+    text-align: center;
+    display: block;
+}
+
+#outOfTime {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.2em;
+    display: none;
+}
+
+/* Did the user get the answer right or wrong? */
+#result {
     margin-top: 15px;
     font-family: 'Vujahday Script', cursive;
     font-size: 3em;
     font-weight: 900;
+    width: 70%;
+    height: 75%;
+    margin: 50px;
+    text-align: center;
     display: none;
 }
 
-/* High Score Page */
-h4 {
-    font-family: 'Mukta', sans-serif;
+#start,
+#initialSubmit {
+    padding: 2px;
+    width: 200px;
+    height: 85px;
+    background-color: var(--gogo-green);
+    color: var(--main-yellow);
+    font-family: 'Sigmar One', cursive;
     font-size: 2.5em;
-    font-weight: 800;
-    padding-bottom: 2em;
+    font-weight: bolder;
+    border-radius: 20px;
 }
 
-span {
+#timer {
+    justify-items: flex-end;
     font-family: 'Sigmar One', cursive;
-    color: var(--gogo-green);
+    font-size: 2em;
+}
+
+/* High Score Page */
+#quiz-completed {
+    width: 70%;
+    height: 75%;
+    margin: 50px;
+    text-align: center;
+    display: none;
+}
+
+#quiz-question {
+    margin: 20px 0 20px 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2.2em;
 }
