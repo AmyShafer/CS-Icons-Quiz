@@ -1,16 +1,24 @@
 var start = document.getElementById("start");
 //var outOfTime = document.getElementById("stop");
+var highScorePage = document.getElementById("initialSubmit");
 
-function countdownTimer() {
+function countdownTimer(str) {
   var clock = document.getElementById('timer');
   var count = 60;
-  var interval = setInterval(function(){
+  var countdown = setInterval(function(){
     clock.innerHTML = count;
-    count--;
-    if (count === 0){
-      clearInterval(interval);
+    if (str === "off") {
+      //clearInterval(countdown);
+      clock.innerHTML = "Winner!";
+      count;
+    } 
+    if (count === 0) {
+      clearInterval(countdown);
       clock.innerHTML = 'Time\'s Up!';
+    } else {
+      count--;
     }
+
   }, 1000);
 }
 
@@ -33,7 +41,7 @@ var allQuestions = [
     },
     // Question Two
     {
-        question: "Fill in the Blank: A plaque at a Alan Turning statue reads 'Father of ______, mathematician, logician, wartime codebreaker, victim of prejudice.\'",
+        question: "Fill in the Blank: A plaque at a Alan Turing statue reads 'Father of ______, mathematician, logician, wartime codebreaker, victim of prejudice.\'",
         choices: ["a.) Cambridge Calculus", "b.) commie diets", "c.) computer science", "d.) company dress codes"],
         correctAnswer: "c.) computer science"
     },
@@ -58,10 +66,9 @@ var allQuestions = [
 ]
 
 function displayQuizQuestions(questionArray, number) {
-
   // edge case for the end of the quiz
   if (number > 4) {
-    console.log("End of Quiz.");
+    countdownTimer("off");
     scoreQuiz();
   }
 
@@ -98,14 +105,13 @@ function checkAnswer(actualAnswer, expectedAnswer) {
   var clock = document.getElementById('timer');
   var nextQuestion = parseInt(localStorage.getItem("questionNumber")) + 1;
   
-  
     if (actualAnswer === expectedAnswer) {
       resultAppears.innerHTML = "Correct!"
       resultAppears.style.color = "#00985C";
       resultAppears.style.display = "block";
     } else {
       resultAppears.innerHTML = "Incorrect!"
-      console.log("Incorrect!");
+      resultAppears.style.color = "#98003C";
       resultAppears.style.display = "block";
     }
     displayQuizQuestions(allQuestions, nextQuestion); 
@@ -121,9 +127,20 @@ function scoreQuiz() {
   quizCompleted.style.display = "block";
 
   score.innerHTML = remainingTime;
-  revealScore.appendChild(score);
 }
 
+function highScores() {
+  var playerScore = document.getElementByTagName("span").value;
+  var playerInitials = document.getElementById("highScore").value;
+  var winnersList = document.getElementById("winners-list");
+  var recordScore = localStorage.setItem("playerScore", playerScore);
+  var recordPlayer = localStorage.setItem("playerInitials", playerInitials);
+  var playerLi = "";
+
+  playerLi.innerHTML = localStorage.getItem(recordScore), localStorage.getItem(ecordPlayer);  
+  winnersList.appendChild(playerLi);
+}
     
 start.addEventListener("click", startQuiz);
 //outOfTime.addEventListener("message", )
+highScorePage.addEventListener("click", highScores);
