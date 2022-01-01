@@ -1,6 +1,6 @@
 var start = document.getElementById("start");
 //var outOfTime = document.getElementById("stop");
-var highScorePage = document.getElementById("initialSubmit");
+var highScorePage = document.getElementById("winners-list");
 
 function countdownTimer(str) {
   var clock = document.getElementById('timer');
@@ -23,7 +23,7 @@ function countdownTimer(str) {
 }
 
 function startQuiz() {
-  countdownTimer();
+  countdownTimer("on");
   var instructionsVanish = document.getElementById("instructions");
   instructionsVanish.style.display = "none";
   var quizAppears = document.getElementById("cs-icons-quiz");
@@ -121,26 +121,34 @@ function scoreQuiz() {
   var noMoreQuestions = document.getElementById("cs-icons-quiz");
   var quizCompleted = document.getElementById("quiz-completed");
   var score = document.getElementById("score");
+  var player = document.getElementById("player").value;
   var remainingTime = document.getElementById('timer').innerHTML;
 
   noMoreQuestions.style.display = "none"; 
   quizCompleted.style.display = "block";
 
   score.innerHTML = remainingTime;
+  localStorage.setItem("score", remainingTime);
+  localStorage.setItem("player", player);
 }
 
 function highScores() {
-  var playerScore = document.getElementByTagName("span").value;
-  var playerInitials = document.getElementById("highScore").value;
   var winnersList = document.getElementById("winners-list");
-  var recordScore = localStorage.setItem("playerScore", playerScore);
-  var recordPlayer = localStorage.setItem("playerInitials", playerInitials);
+  var recordScore = localStorage.getItem("score");
+  var recordPlayer = localStorage.getItem("player");
   var playerLi = "";
+  winnersList.innerHTML = playerLi;
+  playerLi = document.createElement("li")
 
-  playerLi.innerHTML = localStorage.getItem(recordScore), localStorage.getItem(ecordPlayer);  
+  playerLi.innerHTML = recordScore + "     " + recordPlayer.toUpperCase();
   winnersList.appendChild(playerLi);
 }
-    
-start.addEventListener("click", startQuiz);
+
+if (start) {
+  start.addEventListener("click", startQuiz);
+}
+
+highScorePage.onload = highScores();
+
 //outOfTime.addEventListener("message", )
-highScorePage.addEventListener("click", highScores);
+
