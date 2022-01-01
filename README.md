@@ -28,13 +28,13 @@ The following image shows the website is action!
 
 * <a href="http://www.asmarterwaytolearn.com/js/index-of-exercises.html" target="_blank"> I referenced Mary Myers' book "A Smarter Way to Learn JavaScript" more than once. Specifically, the chapters on "The DOM".</a> 
 
-* <a href="https://eloquentjavascript.net/" target="_blank"> I didn't have much experience using setTimeout so I consulted "Eloquent JavaScript", pages 249 and 377, for examples.</a> 
+* <a href="https://eloquentjavascript.net/" target="_blank"> I didn't have much experience using setInterval so I consulted "Eloquent JavaScript", pages 248 and 341, for examples.</a> 
 
 * <a href="https://en.wikipedia.org/wiki/Evelyn_Boyd_Granville" target="_blank"> I used Wikipedia for the facts about Ada Lovelace, Alan Turing, John Von Neumann, Margaret Hamilton, and Evelyn Boyd Granville. </a> 
 
-* <a href="---" target="_blank"> I looked at some old code I worked on for the online class "Watch and Code" while I struggled to add new information to the quiz in the different stages. </a> 
+* <a href="https://github.com/AmyShafer/watch-and-code" target="_blank"> I looked at some old code I worked on for the online class "Watch and Code" while I struggled to add new information to the quiz in the different stages. </a> 
 
-* <a href="---" target="_blank_"> --- </a> 
+* <a href="https://www.youtube.com/watch?v=MLtAMg9_Svw" target="_blank_"> I got stuck on subtracting from the timer as a penalty but I found a video from The Coding Train that was insightful. </a> 
 
 
 ## Possible-improvements

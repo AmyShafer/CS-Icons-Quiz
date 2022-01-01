@@ -12,8 +12,12 @@
    <link href="https://fonts.googleapis.com/css2?family=Vujahday+Script&family=Work+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 id="scoreboard">Highscores</h1>
-    <ol id="winners-list"></ol>
+    <main>
+      <h1 id="scoreboard">Highscores</h1>
+      <ol id="winners-list"></ol>
+      <button class="high-score-buttons" onclick="location.href='index.html';">Go Back</button>
+      <button class="high-score-buttons" onclick="localStorage.clear()">Clear Highscores</button>
+    </main>
     <script src="./assets/script.js"></script>
 </body>
 </html>

@@ -1,20 +1,28 @@
 var start = document.getElementById("start");
-//var outOfTime = document.getElementById("stop");
+var outOfTime = document.getElementById("out-of-time");
 var highScorePage = document.getElementById("winners-list");
+var clear = document.getElementById("clear");
+var count = 60;
 
 function countdownTimer(str) {
   var clock = document.getElementById('timer');
-  var count = 60;
+  var quizQuestions = document.getElementById("quiz-question");
+  var quizChoices = document.getElementById("multiple-choice");
+  var resultAppears = document.getElementById("result");
   var countdown = setInterval(function(){
     clock.innerHTML = count;
     if (str === "off") {
-      //clearInterval(countdown);
       clock.innerHTML = "Winner!";
       count;
     } 
+    // if the player runs out of time
     if (count === 0) {
       clearInterval(countdown);
       clock.innerHTML = 'Time\'s Up!';
+      outOfTime.style.display = "block";
+      quizQuestions.style.display = "none";
+      quizChoices.style.display = "none";
+      resultAppears.style.display = "none";
     } else {
       count--;
     }
@@ -102,7 +110,6 @@ function multipleChoices (questionArray, number) {
 
 function checkAnswer(actualAnswer, expectedAnswer) {
   var resultAppears = document.getElementById("result");
-  var clock = document.getElementById('timer');
   var nextQuestion = parseInt(localStorage.getItem("questionNumber")) + 1;
   
     if (actualAnswer === expectedAnswer) {
@@ -111,6 +118,7 @@ function checkAnswer(actualAnswer, expectedAnswer) {
       resultAppears.style.display = "block";
     } else {
       resultAppears.innerHTML = "Incorrect!"
+      count = count - 10;
       resultAppears.style.color = "#98003C";
       resultAppears.style.display = "block";
     }
@@ -138,14 +146,25 @@ function highScores() {
   var recordPlayer = localStorage.getItem("player");
   var playerLi = "";
   winnersList.innerHTML = playerLi;
-  playerLi = document.createElement("li")
+  playerLi = document.createElement("li");
 
-  playerLi.innerHTML = recordScore + "     " + recordPlayer.toUpperCase();
+  playerLi.innerHTML = recordScore + " " + recordPlayer.toUpperCase();
   winnersList.appendChild(playerLi);
+}
+
+function clearScores() {
+  var players = document.getElementsByTagName("ol");
+  localStorage.clear();
+
+  players.style.display = "none";
 }
 
 if (start) {
   start.addEventListener("click", startQuiz);
+}
+
+if (clear) {
+  clear.addEventListener("click", clearScores);
 }
 
 highScorePage.onload = highScores();
