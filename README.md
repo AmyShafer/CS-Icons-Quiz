@@ -22,7 +22,7 @@ Users do not need setup.
 
 The following image shows the website is action!
 
-<img src="---" width="550" height="315" alt="Computer Science Icons Quiz"/>
+<img src="./assets/CS-Quiz.gif" width="550" height="300" alt="Computer Science Icons Quiz"/>
 
 ## Resources-used
 
@@ -39,7 +39,9 @@ The following image shows the website is action!
 
 ## Possible-improvements
 
----
+Presently, the application does not save more than one player on the "High Scores" board. A neat improvement would be to have more high scorers featured. 
+
+Another fun addition would be to provide the player with a way to learn the correct answers to the questions they did not know. The quiz could either tell the player outright or supply a type of study guide after scoring so the user could reach the information afterwards. 
 
 ---
 
