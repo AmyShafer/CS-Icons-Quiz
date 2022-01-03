@@ -130,7 +130,7 @@ function scoreQuiz() {
   var noMoreQuestions = document.getElementById("cs-icons-quiz");
   var quizCompleted = document.getElementById("quiz-completed");
   var score = document.getElementById("score");
-  var player = document.getElementById("player");
+  var player = document.getElementById("player").value;
   var remainingTime = document.getElementById('timer').innerHTML;
   localStorage.setItem("score", remainingTime);
   localStorage.setItem("player", player);
