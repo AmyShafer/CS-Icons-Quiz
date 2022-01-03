@@ -11,6 +11,7 @@ function countdownTimer(str) {
   var resultAppears = document.getElementById("result");
   var countdown = setInterval(function(){
     clock.innerHTML = count;
+    // if the player wins  
     if (str === "off") {
       clock.innerHTML = "Winner!";
       count;
@@ -129,15 +130,15 @@ function scoreQuiz() {
   var noMoreQuestions = document.getElementById("cs-icons-quiz");
   var quizCompleted = document.getElementById("quiz-completed");
   var score = document.getElementById("score");
-  var player = document.getElementById("player").value;
+  var player = document.getElementById("player");
   var remainingTime = document.getElementById('timer').innerHTML;
+  localStorage.setItem("score", remainingTime);
+  localStorage.setItem("player", player);
 
   noMoreQuestions.style.display = "none"; 
   quizCompleted.style.display = "block";
 
   score.innerHTML = remainingTime;
-  localStorage.setItem("score", remainingTime);
-  localStorage.setItem("player", player);
 }
 
 function highScores() {
@@ -148,12 +149,14 @@ function highScores() {
   winnersList.innerHTML = playerLi;
   playerLi = document.createElement("li");
 
-  playerLi.innerHTML = recordScore + " " + recordPlayer.toUpperCase();
+  //recordPlayer = recordPlayer.toUpperCase();
+
+  playerLi.innerHTML = recordScore + " " + recordPlayer;
   winnersList.appendChild(playerLi);
 }
 
 function clearScores() {
-  var players = document.getElementsByTagName("ol");
+  var players = document.querySelector("ol");
   localStorage.clear();
 
   players.style.display = "none";
@@ -163,11 +166,10 @@ if (start) {
   start.addEventListener("click", startQuiz);
 }
 
+if (highScorePage) {  
+  highScorePage.onload = highScores();
+}
+
 if (clear) {
   clear.addEventListener("click", clearScores);
 }
-
-highScorePage.onload = highScores();
-
-//outOfTime.addEventListener("message", )
-
