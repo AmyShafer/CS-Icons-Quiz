@@ -1,12 +1,13 @@
 var start = document.getElementById("start");
 var outOfTime = document.getElementById("out-of-time");
 var saveInitials = document.getElementById("initialSubmit");
-var highScorePage = document.getElementById("winners-list");
+var listHighScores = document.getElementById("winners-list");
 var clear = document.getElementById("clear");
 var count = 60;
 
 function countdownTimer(str) {
   var clock = document.getElementById('timer');
+  var timeLeft = clock.innerHTML;
   var quizQuestions = document.getElementById("quiz-question");
   var quizChoices = document.getElementById("multiple-choice");
   var resultAppears = document.getElementById("result");
@@ -14,8 +15,8 @@ function countdownTimer(str) {
     clock.innerHTML = count;
     // if the player wins  
     if (str === "off") {
+      count = timeLeft;
       clock.innerHTML = "Winner!";
-      count;
     } 
     // if the player runs out of time
     if (count === 0) {
@@ -133,13 +134,13 @@ function scoreQuiz() {
   var score = document.getElementById("score");
   var player = document.getElementById("player").value;
   var remainingTime = document.getElementById('timer').innerHTML;
-  localStorage.setItem("score", remainingTime);
+  localStorage.setItem("score", count);
   localStorage.setItem("player", player);
 
   noMoreQuestions.style.display = "none"; 
   quizCompleted.style.display = "block";
 
-  score.innerHTML = remainingTime;
+  score.innerHTML = count;
 }
 
 function highScores() {
@@ -171,7 +172,7 @@ if (saveInitials) {
   saveInitials.addEventListener("click", scoreQuiz);
 }
 
-highScorePage.onload = highScores();
+listHighScores.onload = highScores();
 
 
 if (clear) {
