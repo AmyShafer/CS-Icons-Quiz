@@ -1,5 +1,6 @@
 var start = document.getElementById("start");
 var outOfTime = document.getElementById("out-of-time");
+var saveInitials = document.getElementById("initialSubmit");
 var highScorePage = document.getElementById("winners-list");
 var clear = document.getElementById("clear");
 var count = 60;
@@ -166,9 +167,12 @@ if (start) {
   start.addEventListener("click", startQuiz);
 }
 
-if (highScorePage) {  
-  highScorePage.onload = highScores();
+if (saveInitials) {
+  saveInitials.addEventListener("click", scoreQuiz);
 }
+
+highScorePage.onload = highScores();
+
 
 if (clear) {
   clear.addEventListener("click", clearScores);
