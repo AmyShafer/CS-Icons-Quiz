@@ -144,14 +144,14 @@ function scoreQuiz() {
 function highScores() {
   var winnersList = document.getElementById("winners-list");
   var recordScore = localStorage.getItem("score");
-  var recordPlayer = localStorage.getItem("player");
+  var recordPlayer = localStorage.getItem("player").value;
   var playerLi = "";
   winnersList.innerHTML = playerLi;
   playerLi = document.createElement("li");
 
   //recordPlayer = recordPlayer.toUpperCase();
 
-  playerLi.innerHTML = recordScore + " " + recordPlayer;
+  playerLi.innerHTML = recordScore + " " + JSON.stringify(recordPlayer);
   winnersList.appendChild(playerLi);
 }
 
