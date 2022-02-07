@@ -1,7 +1,7 @@
 
 # Computer Science Icons Quiz
 
-Ada Lovelace wrote a computer program before there were computers. Alan Turing struggled with bigotry even after saving millions of lives as a WWII codebreaker. Learn all this and more in my extraordinary Computer Science Icons Quiz!
+Ada Lovelace wrote a computer program before there were computers. Alan Turing struggled with bigotry even after saving millions of lives as a WWII codebreaker. Learn all this and more in this extraordinary Computer Science Icons Quiz!
 
 ## Table of contents
 * [Technologies](#technologies)
