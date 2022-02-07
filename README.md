@@ -61,7 +61,7 @@ This application was created by Amy U. Shafer. You can reach her at Amy.U.Shafer
 
 MIT License
 
-Copyright (c) 2022 [Amy U. Shafer]
+Copyright (c) 2022 Amy U. Shafer
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
