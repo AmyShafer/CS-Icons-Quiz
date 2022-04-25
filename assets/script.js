@@ -174,7 +174,6 @@ if (saveInitials) {
 
 listHighScores.onload = highScores();
 
-
 if (clear) {
   clear.addEventListener("click", clearScores);
 }

@@ -22,7 +22,7 @@ Users do not need setup.
 
 The following image shows the website is action!
 
-<img src="./assets/CS-Quiz.gif" width="550" height="300" alt="Computer Science Icons Quiz"/>
+<img src="./assets/CS-Quiz.gif" width="490" height="340" alt="Computer Science Icons Quiz"/>
 
 ## Resources-used
 
