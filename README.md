@@ -28,7 +28,7 @@ The following image shows the website is action!
 
 ## Resources-used
 
-* <a href="http://www.asmarterwaytolearn.com/js/index-of-exercises.html" target="_blank"> I referenced Mary Myers' book "A Smarter Way to Learn JavaScript" more than once. Specifically, the chapters on "The DOM".</a> 
+* <a href="http://www.asmarterwaytolearn.com/js/index-of-exercises.html" target="_blank"> I referenced Mark Myers' book "A Smarter Way to Learn JavaScript" more than once. Specifically, the chapters on "The DOM".</a> 
 
 * <a href="https://eloquentjavascript.net/" target="_blank"> I didn't have much experience using setInterval so I consulted "Eloquent JavaScript", pages 248 and 341, for examples.</a> 
 
